@@ -1,0 +1,687 @@
+To make your website responsive, I'll modify your existing CSS by introducing more comprehensive media queries. This will allow the layout to adjust for different screen sizes, such as tablets and mobile devices. Additionally, I’ll adjust certain components like navigation, image sizes, and text formatting for better readability on smaller screens.
+
+Here are the modifications you can implement to improve responsiveness:
+
+1. **General Structure**: Ensure elements scale properly based on screen width. This includes text, images, and form fields.
+2. **Navigation Bar**: The navigation should become a dropdown or stack vertically on smaller screens.
+3. **Image Size and Layout**: Resize images for smaller screens and stack them vertically when necessary.
+4. **Section Padding and Margins**: Adjust margins and padding for better spacing on small devices.
+
+### Updated CSS with Media Queries:
+
+```css
+:root {
+    --COLOR: #2b2b2b;
+    --BGCOLOR: #c82021;
+}
+
+body {
+    margin: none;
+    padding: none;
+}
+
+.page-logo {
+    color: var(--BGCOLOR);
+    margin-top: 7px;
+    margin-left: 40px;
+}
+
+.estate {
+    color: var(--COLOR);
+}
+
+.nav-bar {
+    display: flex;
+    margin: none;
+    padding: none;
+}
+
+.nav {
+    display: flex;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+.Navlink {
+    text-decoration: none;
+    padding: 25px 20px 0px 20px;
+    color: black;
+}
+
+.Navlink:hover {
+    text-decoration: underline;
+}
+
+.nav-list {
+    padding-left: 80px;
+    padding-right: 140px;
+    display: flex;
+    list-style: none;
+}
+
+.Login-btn {
+    margin-right: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+.Login-btn:hover {
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.sign-up {
+    background-color: var(--BGCOLOR);
+    border-radius: 20px;
+    width: 80px;
+    height: 35px;
+    color: white;
+    margin-top: 5px;
+    border: none;
+}
+
+.sign-up:hover {
+    background-image: linear-gradient(var(--BGCOLOR), red, orange);
+}
+
+.first-sect {
+    text-align: center;
+    width: 1200px;
+    height: 400px;
+    margin-left: 30px;
+}
+
+.sect-img {
+    width: 100%;
+    height: auto;
+    margin: none;
+    padding: none;
+    border-radius: 20px;
+}
+
+.div-sect {
+    margin-top: -360px;
+}
+
+.first-sect h1 {
+    font-size: 50px;
+    margin-top: -20px;
+}
+
+.first-sect p {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: -30px;
+}
+
+.first-sect a {
+    text-decoration: none;
+    color: black;
+    padding: 15px;
+}
+
+.first-sect a:hover {
+    text-decoration: underline;
+}
+
+form {
+    margin-top: 20px;
+}
+
+input {
+    width: 300px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    padding-left: 15px;
+    outline: none;
+}
+
+.search {
+    background-color: var(--BGCOLOR);
+    border-radius: 50%;
+    border: none;
+    width: 35px;
+    height: 35px;
+}
+
+.search:hover {
+    background-image: linear-gradient(var(--BGCOLOR), red, orange);
+}
+
+.sect2 {
+    text-align: center;
+}
+
+.sect2 p {
+    margin: 40px 300px 40px 300px;
+}
+
+.sect3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.sect3-div {
+    padding: 10px 30px 10px 30px;
+    margin: 10px;
+    background-color: lightgray;
+    border-radius: 20px;
+    border: none;
+}
+
+.sect3-div h1 {
+    color: var(--BGCOLOR);
+}
+
+.help-div {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    color: var(--COLOR);
+}
+
+.icons {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.icon-help {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--COLOR);
+    margin: 30px;
+    border-radius: 50%;
+}
+
+.icon-help:hover {
+    border: 1px solid var(--BGCOLOR);
+}
+
+#icon-help {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--BGCOLOR);
+    margin: 30px;
+    border-radius: 50%;
+}
+
+#sect4-id {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.sect4-div {
+    margin: 15px;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.sect4-div.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sect4-div img {
+    border-radius: 20px;
+    border: none;
+    width: 250px;
+    height: 200px;
+}
+
+.explore {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.explore button {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    transition: 0.5s;
+}
+
+.explore button:hover {
+    transform: scale(1.1);
+}
+
+.form-div {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: var(--BGCOLOR);
+    height: 300px;
+    min-width: 300px;
+    min-height: 200px;
+    max-width: 1200px;
+    margin-left: 20px;
+    margin-top: 80px;
+    color: white;
+    border-radius: 20px;
+}
+
+.form-div h1 {
+    padding-top: 70px;
+}
+
+.form-div p {
+    padding-left: 260px;
+    padding-right: 260px;
+    margin-top: 20px;
+}
+
+.red-form {
+    margin-top: 25px;
+}
+
+.red-form input {
+    width: 430px;
+    margin-left: 60px;
+    height: 37px;
+    outline: none;
+    border: none;
+}
+
+.red-form button {
+    border: none;
+    outline: none;
+    background-color: var(--COLOR);
+    border-radius: 30px;
+    height: 35px;
+    width: 100px;
+    color: white;
+    transition: 0.5s;
+}
+
+.red-form button:hover {
+    height: 39px;
+    width: 107px;
+}
+
+footer {
+    margin: none;
+    padding: none;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    text-justify: center;
+    color: var(--COLOR);
+}
+
+footer h1 {
+    margin-top: 60px;
+}
+
+.top-city {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    text-justify: center;
+}
+
+.city {
+    margin: 20px 100px 20px 100px;
+}
+
+.city a {
+    color: var(--COLOR);
+    text-decoration: none;
+    margin: 20px;
+}
+
+.city a:hover {
+    text-decoration: underline;
+}
+
+/* MEDIA QUERIES */
+
+/* For Tablets */
+@media screen and (max-width: 1024px) {
+    .first-sect {
+        width: 90%;
+        height: 300px;
+    }
+    .nav-list {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    .sign-up {
+        width: 120px;
+        font-size: 14px;
+    }
+    .sect-img {
+        width: 100%;
+        height: auto;
+    }
+    .red-form input,
+    .red-form button {
+        width: 90%;
+        margin: 10px 0;
+    }
+}
+
+/* For Mobile (Phone Sizes) */
+@media screen and (max-width: 768px) {
+    .first-sect {
+        width: 100%;
+        height: 250px;
+        text-align: center;
+    }
+    .nav-bar {
+        flex-direction: column;
+    }
+    .nav-list {
+        flex-direction: column;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .Navlink {
+        padding: 15px 20px;
+    }
+    .sect-img {
+        width: 100%;
+        height: auto;
+    }
+    .form-div {
+        padding: 10px;
+    }
+    .sign-up {
+        width: 100px;
+    }
+    .red-form input {
+        width: 80%;
+    }
+}
+
+/* For Small Mobile Devices */
+@media screen and (max-width: 480px) {
+    .first-sect {
+        width: 100%;
+        height: 200px;
+    }
+    .nav-bar {
+        display: block;
+        text-align: center;
+    }
+    .nav-list {
+        display: block;
+        padding-left: 0;
+    }
+    .Login-btn {
+        font-size: 14px;
+    }
+    .sect-img {
+        width: 100%;
+        height: auto;
+    }
+    .form-div {
+        padding: 20px;
+    }
+    .red-form input {
+        width: 100%;
+    }
+}
+```
+
+### Key Changes:
+- **Media Queries**: Added at breakpoints for tablets (`max-width: 1024px`), mobile (`max-width: 768px`), and small phones (`max-width: 480px`).
+- **Nav Menu**: Adjusts for mobile screens, making the navigation stack vertically and spacing elements more comfortably.
+- **Image Scaling**: Ensures that images fit within the container and scale appropriately on different screen sizes.
+- **Layout Adjustments**: Reduced padding and adjusted the layout of sections (e.g., form fields) to fit smaller screens.
+
+This updated code ensures that your website's layout remains user-friendly and accessible across various screen sizes, from desktop to mobile devices.
+
+
+
+
+<style>
+:root{
+    --COLOR:#2b2b2b;
+    --BGCOLOR: #c82021;
+}
+body{
+    margin: none;
+    padding: none;
+}
+
+.page-logo{
+    color:var(--BGCOLOR); 
+    margin-top: 7px;
+    margin-left: 40px
+}
+
+.estate{
+    color:var(--COLOR);
+}
+.nav-bar{
+    display: flex;
+    margin: none;
+    padding: none;
+}
+.nav{
+    display: flex;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    align-items: center;
+    text-align: center
+}
+.Navlink{
+    text-decoration: none;
+    padding: 25px 20px 0px 20px;
+    color: black;
+}
+.Navlink:hover{
+    text-decoration: underline;
+}
+.nav-list{
+    padding-left: 80px;
+    padding-right: 140px;
+    display: flex;
+    list-style: none;
+}
+.Login-btn{
+    margin-right: 20px;
+    color: black;
+    text-decoration: none;
+}
+.Login-btn:hover{
+    font-weight: bolder;
+    text-decoration: underline;
+}
+.sign-up{
+    background-color: var(--BGCOLOR);
+    border-radius: 20px;
+    width:80px;
+    height: 35px;
+    color: white;
+    margin-top: 5px;
+    border: none;
+}
+.sign-up:hover{
+    background-image: linear-gradient(var(--BGCOLOR),red,orange);
+}
+.first-sect{
+    text-align: center;
+    width: 1200px;
+    height: 550px; 
+    margin-left: 30px; 
+}
+.sect-img{
+    width: inherit;
+    height: inherit;
+    margin: none;
+    padding: none;
+    border-radius: 20px;
+    filter: blur(20%);
+}
+.pute{
+    background-color: white;
+
+}
+.lx{
+    color: white;
+}
+.div-sect{
+    margin-top:-360px;
+}
+.first-sect h1{
+    font-size: 50px;
+    margin-top: -20px;
+}
+.first-sect p{
+    color:black;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: -30px;
+}
+.first-sect a{
+    text-decoration: none;
+    color: black;
+    padding: 15px;
+}
+.first-sect a:hover{
+    text-decoration: underline;
+}
+ form{
+     margin-top: 20px;
+ }
+input{
+    width: 300px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    padding-left: 15px;
+    outline: none
+}
+.search{
+    background-color: var(--BGCOLOR);
+    border-radius: 50%;
+    border: none;
+    width: 35px;
+    height: 35px;
+}
+.search:hover{
+    background-image:  linear-gradient(var(--BGCOLOR),red,orange);
+}
+.sect2{
+    text-align: center;
+}
+.sect2 p{
+    margin: 40px 300px 40px 300px;
+}
+.sect3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.sect3-div{
+    padding: 10px 30px 10px 30px;
+    margin: 10px;
+    background-color: lightgray;
+    border-radius: 20px;
+    border: none;
+}
+.sect3-div h1{
+    color: var(--BGCOLOR);
+}
+.help-div{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    color: var(--COLOR);
+}
+.icons{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.icon-help{
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--COLOR);
+    margin: 30px;
+    border-radius:50%; 
+}
+.icon-help:hover{
+    border: 1px solid var(--BGCOLOR);
+}
+#icon-help{
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--BGCOLOR);
+    margin: 30px;
+    border-radius:50%; 
+}
+/*#sect4-id{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.sect4-div{
+    margin: 15px;
+}
+.sect4-div img{
+    border-radius: 20px;
+    border: none;
+    width: 250px;
+    height: 200px;
+}
+.sect4-div{
+    text-align: left;
+}*/
+#sect4-id {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    /* Allow wrapping for smaller screens */
+}
+
+.sect4-div {
+    margin: 15px;
+    opacity: 0; /* Start hidden */
+    transform: translateY(50px); /* Start below the original position */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+}
+
+.sect4-div.visible {
+    opacity: 1; /* Make it visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+.sect4-div img {
+    border-radius: 20px;
+    border: none;
+    width: 250px;
+    height: 200px;
+}
+
+.sect4-div {
+    text-align: left;
+}
+</style>
